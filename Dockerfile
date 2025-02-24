@@ -17,4 +17,3 @@ USER appuser
 
 LABEL git_commit_hash="${GIT_COMMIT_HASH}"
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001"]
-
