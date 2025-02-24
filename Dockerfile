@@ -1,6 +1,6 @@
 FROM python:3-slim
 
-EXPOSE 8000
+EXPOSE 8090
 
 ENV PYTHONDONTWRITEBYTECODE=1
 
@@ -16,5 +16,5 @@ RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /
 USER appuser
 ARG GIT_COMMIT_HASH=unknown
 LABEL git_commit_hash="${GIT_COMMIT_HASH}"
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8090"]
 
