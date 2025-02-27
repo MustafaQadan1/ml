@@ -5,8 +5,8 @@ import uvicorn
 
 app = FastAPI()
 
-set API_KEY=15426455621635467411312634632321355
-
+# Fetch API key from environment variables
+API_KEY = os.getenv("API_KEY")
 
 @app.get("/")
 async def read_root(age: int, gender: int, key: str):
@@ -15,9 +15,8 @@ async def read_root(age: int, gender: int, key: str):
 
     model = joblib.load("music-recommender.joblib")
     predictions = model.predict([[age, gender]])
-    
+
     return {"predictions": predictions[0]}
 
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8001)
-
