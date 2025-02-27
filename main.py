@@ -2,6 +2,8 @@ from fastapi import FastAPI
 import joblib
 import uvicorn
 
+API_Key='testapikey'
+
 app = FastAPI()
 
 @app.get("/")
