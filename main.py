@@ -6,7 +6,7 @@ import uvicorn
 app = FastAPI()
 
 # Fetch API key from environment variables
-API_KEY = os.getenv("API_KEY")
+API_KEY = '34563767897t808909'
 
 @app.get("/")
 async def read_root(age: int, gender: int, key: str):
